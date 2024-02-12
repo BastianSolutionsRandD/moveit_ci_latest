@@ -1,7 +1,7 @@
 # This config file for Travis CI utilizes https://github.com/ros-planning/moveit_ci/ package.
 # THIS FILE IS BEING USED TO CI-TEST THE CI SCRIPT ITSELF - do not use this for your moveit repo but instead use the version in README.md
 os: linux
-dist: bionic
+dist: focal
 services:
   - docker
 language: cpp
@@ -13,7 +13,7 @@ notifications:
 
 env:
   global: # default values
-    - ROS_DISTRO=melodic
+    - ROS_DISTRO=noetic
     - ROS_REPO=ros
     - SCRIPT=travis.sh
 
