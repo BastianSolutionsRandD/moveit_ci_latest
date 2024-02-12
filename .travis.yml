@@ -22,7 +22,7 @@ jobs:
   include:
     - env: SCRIPT=unit_tests.sh   ROS_DISTRO=noetic
     # Run docker with custom image
-    - env: SCRIPT=unit_tests.sh   ROS_REPO=               DOCKER_IMAGE=ros:melodic-ros-base
+    - env: SCRIPT=unit_tests.sh   ROS_REPO=               DOCKER_IMAGE=ros:noetic-ros-base
     # Skip clang-tidy-check on Xenial. It's only supported for cmake >= 3.6. clang-tidy-fix is tested.
     - env: SCRIPT=unit_tests.sh   SKIP=clang-tidy-check   ROS_DISTRO=kinetic
 
