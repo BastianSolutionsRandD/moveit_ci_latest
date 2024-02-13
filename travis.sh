@@ -11,6 +11,7 @@
 
 export MOVEIT_CI_DIR=$(dirname ${BASH_SOURCE:-$0})  # path to the directory running the current script
 export REPOSITORY_NAME=$(basename $PWD) # name of repository, travis originally checked out
+echo -e $(colorize RED "ROS_DISTRO=$ROS_DISTRO'");
 
 # Travis' default timeout for open source projects is 50 mins
 # If your project has a larger timeout, specify this variable in your .travis.yml file!
