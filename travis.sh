@@ -11,8 +11,7 @@
 
 export MOVEIT_CI_DIR=$(dirname ${BASH_SOURCE:-$0})  # path to the directory running the current script
 export REPOSITORY_NAME=$(basename $PWD) # name of repository, travis originally checked out
-echo -e $(colorize RED "ROS_DISTRO=$ROS_DISTRO'");
-
+# export ROS_DISTRO=noetic
 # Travis' default timeout for open source projects is 50 mins
 # If your project has a larger timeout, specify this variable in your .travis.yml file!
 MOVEIT_CI_TRAVIS_TIMEOUT=${MOVEIT_CI_TRAVIS_TIMEOUT:-47}  # 50min minus safety margin
@@ -49,6 +48,7 @@ function docker_cp {
 
 function run_docker() {
    run_script BEFORE_DOCKER_SCRIPT
+   echo -e $(colorize RED "Unsupported ROS_REPO=$ROS_DISTRO. Use 'ros' or 'ros-shadow-fixed'");
 
     # Get CI enviroment parameters to pass into docker for codecov
     [[ "${TEST:=}" == *code-coverage* ]] && CI_ENV_PARAMS=`bash <(curl -s https://codecov.io/env)`
