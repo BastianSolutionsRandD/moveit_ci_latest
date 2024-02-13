@@ -276,6 +276,7 @@ function prepare_ros_workspace() {
 
    # run BEFORE_SCRIPT, which might modify the workspace further
    run_script BEFORE_SCRIPT
+   export ROS_DISTRO=noetic
 
    # For debugging: list the files in workspace's source folder
    travis_run_simple cd $ROS_WS/src
